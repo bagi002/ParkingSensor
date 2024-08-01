@@ -36,7 +36,7 @@ void obradaProlaza(){
       interfejs = true;
     }
 
-    if(i % 20 == 0){
+    if(i % 10 == 0){
       svirko = true;
     }
   }
@@ -63,7 +63,7 @@ void loop() {
 
   if(svirko){
     svirko = false;
-    inter.sviraj(i/20);
+    inter.sviraj(i/10);
   }
 }
 

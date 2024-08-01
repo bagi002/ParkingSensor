@@ -1,1 +1,0 @@
-Parking senzor uz mogucu integraciju u vece sisteme

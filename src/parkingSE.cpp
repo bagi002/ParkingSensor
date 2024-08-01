@@ -32,11 +32,11 @@
             if((distance + 8 > staroMerenje) && (distance - 8 < staroMerenje)){  
                 staroMerenje = distance;  
 
-                if(distance < 8){
+                if(distance < 5){
                     stanje = UDAR;
-                }else if(distance < 30){
+                }else if(distance < 25){
                     stanje = BLIZU;
-                }else if(distance < 80){
+                }else if(distance < 50){
                     stanje = PREPREKA;
                 }else{
                     stanje = SIGURNA;
