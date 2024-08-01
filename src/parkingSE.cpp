@@ -9,17 +9,27 @@
         }
 
         void ParkingSE::ocitaj(){
+
+            long duration;
+            float distance;
+
+            int firstPass = 0;
+
+            do{
+            firstPass++;
             digitalWrite(trig, LOW);
-            delayMicroseconds(2);
+            delayMicroseconds(50);
             digitalWrite(trig, HIGH);
             delayMicroseconds(10);
             digitalWrite(trig, LOW);
 
-            long duration = pulseIn(echo, HIGH, 6000);
-            if(duration == 0) duration = 8000;
-            float distance = duration*0.0344/2;
+            duration = pulseIn(echo, HIGH, 6000);
+            if(duration == 0) duration = 6000;
+            distance = duration*0.0344/2;
 
-            if((distance + 12 > staroMerenje) && (distance - 12 < staroMerenje)){  
+            }while((duration == 6000) && firstPass < 2);
+
+            if((distance + 8 > staroMerenje) && (distance - 8 < staroMerenje)){  
                 staroMerenje = distance;  
 
                 if(distance < 8){

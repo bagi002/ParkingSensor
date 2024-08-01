@@ -21,6 +21,7 @@ Interfejs::Interfejs(int zelena, int zuta1, int zuta2, int crvena,int zvucnik){
     digitalWrite(zuta1, LOW);
     digitalWrite(zuta2, LOW);
     digitalWrite(crvena, LOW);
+    digitalWrite(zvucnik, LOW);
 
 }
 
@@ -47,4 +48,8 @@ void Interfejs::azuriraj(udaljenost x){
     default:
         break;
     }
+}
+
+void Interfejs::sviraj(int x){
+    digitalWrite(zvucnik, zvuk[daljina][x]);
 }
